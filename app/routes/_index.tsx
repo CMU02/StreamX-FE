@@ -1,4 +1,5 @@
-import type { MetaFunction } from "@remix-run/node";
+import { MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -9,23 +10,19 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-      <div className="flex bg-F6F4F4">
-        <div>
-          <div className="flex bg-white px-4 py-5 items-center w-screen shadow-lg ">
-            <div className="flex items-center basis-1/3 ">
-              <div className="font-extrabold pl-4">
-                logoicon
-              </div>
+      <div className="flex bg-[#F6F4F4] min-h-screen">
+        <header className="w-full bg-white shadow-lg">
+          <nav className="container mx-auto flex items-center justify-between px-6 py-4">
+
+            <div className="font-extrabold text-lg">logoicon</div>
+
+            <div className="flex space-x-4 text-gray-700">
+              <Link to="/login" className="hover:text-blue-500 active:text-blue-500">로그인</Link>
+              <Link to="/submit" className="hover:text-blue-500 active:text-blue-500">출품하기</Link>
+              <Link to="/cart" className="hover:text-blue-500 active:text-blue-500">장바구니</Link>
             </div>
-            <div className="flex justify-end basis-1/3">
-            </div>
-            <div className="flex basis-1/3 justify-end font-lightbold">
-              <div className="px-2 cursor-pointer hover:text-blue-500 active:text-blue-500"> 로그인</div>
-              <div className="px-2 cursor-pointer hover:text-blue-500 active:text-blue-500"> 출품하기</div>
-              <div className="px-2 cursor-pointer hover:text-blue-500 active:text-blue-500"> 장바구니</div>
-            </div>
-          </div>
-        </div>
+          </nav>
+        </header>
       </div>
   );
 }
