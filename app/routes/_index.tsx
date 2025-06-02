@@ -1,28 +1,24 @@
-import { MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
+import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "StreamX" },
+    { name: "description", content: "Welcome to StreamX" },
   ];
 };
 
 export default function Index() {
   return (
-      <div className="flex bg-[#F6F4F4] min-h-screen">
-        <header className="w-full bg-white shadow-lg">
-          <nav className="container mx-auto flex items-center justify-between px-6 py-4">
-
-            <div className="font-extrabold text-lg">logoicon</div>
-
-            <div className="flex space-x-4 text-gray-700">
-              <Link to="/login" className="hover:text-blue-500 active:text-blue-500">로그인</Link>
-              <Link to="/submit" className="hover:text-blue-500 active:text-blue-500">출품하기</Link>
-              <Link to="/cart" className="hover:text-blue-500 active:text-blue-500">장바구니</Link>
-            </div>
-          </nav>
-        </header>
+    <div className="flex h-screen items-center justify-center bg-neutral-background font-nanum-square-neo">
+      <div className="text-4xl">
+        <p className="font-[300] text-primary-dark">안녕하세요. StreamX</p>
+        <p className="font-[400] text-primary-light">안녕하세요. StreamX</p>
+        <p className="font-[500] text-accent-mint">안녕하세요. StreamX</p>
+        <p className="font-[600] text-accent-yellow">안녕하세요. StreamX</p>
+        <p className="font-[700] text-accent-red">안녕하세요. StreamX</p>
+        <p className="font-[800] text-neutral-main-text">안녕하세요. StreamX</p>
+        <p className="font-[900] text-neutral-sub-text">안녕하세요. StreamX</p>
       </div>
+    </div>
   );
 }

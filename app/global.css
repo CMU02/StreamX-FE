@@ -8,7 +8,23 @@
 }
 
 @theme {
-  --font-nanum-square-neo: "NanumSquareNeo", sans-serif;
+  --font-nanum-square-neo: "NanumSquareNeo";
+
+  --color-primary-light: #A6A8F0;
+  --color-primary-dark: #A6A8F0;
+  --color-primary-button: #8183E9;
+
+  --color-accent-mint: #5EEAD4;
+  --color-accent-yellow: #FACC15;
+  --color-accent-red: #F87171;
+
+  --color-neutral-background: #fff;
+  --color-neutral-lightgray: #EAEBEE;
+  --color-neutral-border-gray: #E5E7EB;
+  --color-neutral-main-text: #111827;
+  --color-neutral-sub-text: #4B5563;
+
+  --color-backgrounds-card: #F3F4F6;
 }
 
 html,
