@@ -2,7 +2,7 @@ export default function SignupMainSection() {
     return (
         <div className="flex flex-col items-center">
             <section className="w-full max-w-sm bg-white px-6 py-8 text-center rounded shadow-sm">
-                <h2 className="text-2xl font-bold mb-6">로그인</h2>
+                <h2 className="text-2xl font-bold mb-6">회원 가입</h2>
 
                 <div className="flex flex-col gap-4 mt-6">
                     <input
