@@ -11,11 +11,11 @@ export default function MainSection() {
 
             <div className="relative mt-16 h-72 flex justify-center items-center">
                 <div className="relative w-[640px] h-full translate-x-10">
-                    <img src="/avatars/avatar-1.png" alt="" className="absolute left-0 top-1/2 -translate-y-1/2 w-32 h-48 object-cover rounded-xl shadow z-0" />
-                    <img src="/avatars/avatar-2.png" alt="" className="absolute left-24 top-1/2 -translate-y-1/2 w-36 h-56 object-cover rounded-xl shadow-md z-10" />
-                    <img src="/avatars/avatar-center.png" alt="" className="absolute left-48 top-1/2 -translate-y-1/2 w-44 h-64 object-cover rounded-2xl shadow-xl z-20" />
-                    <img src="/avatars/avatar-3.png" alt="" className="absolute left-78 top-1/2 -translate-y-1/2 w-36 h-56 object-cover rounded-xl shadow-md z-10" />
-                    <img src="/avatars/avatar-4.png" alt="" className="absolute left-[26.5rem] top-1/2 -translate-y-1/2 w-32 h-48 object-cover rounded-xl shadow z-0" />
+                    <img src="/test.png" alt="" className="absolute left-0 top-1/2 -translate-y-1/2 w-32 h-48 object-cover rounded-xl shadow z-0" />
+                    <img src="/test.png" alt="" className="absolute left-24 top-1/2 -translate-y-1/2 w-36 h-56 object-cover rounded-xl shadow-md z-10" />
+                    <img src="/test.png" alt="" className="absolute left-48 top-1/2 -translate-y-1/2 w-44 h-64 object-cover rounded-2xl shadow-xl z-20" />
+                    <img src="/test.png" alt="" className="absolute left-78 top-1/2 -translate-y-1/2 w-36 h-56 object-cover rounded-xl shadow-md z-10" />
+                    <img src="/test.png" alt="" className="absolute left-[26.5rem] top-1/2 -translate-y-1/2 w-32 h-48 object-cover rounded-xl shadow z-0" />
                 </div>
             </div>
 
