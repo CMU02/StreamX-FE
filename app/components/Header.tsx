@@ -1,6 +1,41 @@
-import { Link } from "@remix-run/react";
+import { Link, useNavigate } from "@remix-run/react";
+import { useEffect, useState } from "react";
+import { jwtDecode } from "jwt-decode";
+
+interface DecodedToken {
+    exp: number;
+    iat: number;
+    [key: string]: any;
+}
 
 export default function Header() {
+    const navigate = useNavigate();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            try {
+                const decoded = jwtDecode<DecodedToken>(token);
+                const currentTime = Date.now() / 1000;
+                if (decoded.exp && decoded.exp > currentTime) {
+                    setIsLoggedIn(true);
+                } else {
+                    localStorage.removeItem("token");
+                }
+            } catch (e) {
+                console.error("토큰 decode 실패:", e);
+                localStorage.removeItem("token");
+            }
+        }
+    }, []);
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        setIsLoggedIn(false);
+        navigate("/login");
+    };
+
     return (
         <header className="w-full bg-white border-b border-neutral-border-gray">
             <div className="container mx-auto flex items-center justify-between px-6 h-14">
@@ -8,8 +43,12 @@ export default function Header() {
                     <img src="/StreamXDarkLogo.svg" alt="StreamX Logo" className="max-h-full object-contain" />
                 </Link>
 
-                <div className="flex space-x-5 text-neutral-mainText text-sm">
-                    <Link to="/login" className="hover:text-accent-mint">로그인</Link>
+                <div className="flex space-x-5 text-neutral-mainText text-sm items-center">
+                    {isLoggedIn ? (
+                        <button onClick={handleLogout} className="hover:text-accent-red">로그아웃</button>
+                    ) : (
+                        <Link to="/login" className="hover:text-accent-mint">로그인</Link>
+                    )}
                     <Link to="/submit" className="hover:text-accent-mint">출품하기</Link>
                     <Link to="/cart" className="hover:text-accent-mint">장바구니</Link>
                 </div>
